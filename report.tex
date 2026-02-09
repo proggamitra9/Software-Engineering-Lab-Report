@@ -2,6 +2,9 @@
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage{setspace}
 \usepackage{times}
+\usepackage{graphicx} 
+\usepackage{float}    
+\usepackage{caption}
 
 \setstretch{1.5}
 
@@ -119,4 +122,40 @@ The system should ensure:
     \item \textbf{Scalability:} Ability to handle increasing number of users
     \item \textbf{Maintainability:} Easy system updates and error fixing
 \end{itemize}
+
+\section{System Design}
+
+System design describes the overall architecture of the system and explains how different components interact to fulfill the functional requirements. It provides a clear view of data storage, system behavior, and user interactions.
+
+\subsection{Database Design}
+
+The database is designed to store and manage all system-related data in a structured and secure manner. It ensures data integrity, consistency, and efficient access to information.
+
+The main entities of the database include:
+
+\begin{itemize}
+    \item \textbf{Student:} Stores basic student information such as ID, name, email, date of birth, and address.
+    \item \textbf{Admin:} Stores administrator information including ID, name, and email.
+    \item \textbf{Payment:} Stores payment details such as payment ID, amount, payment date, approval status, and associated student ID.
+    \item \textbf{Receipt:} Stores digital receipt information generated after successful payment.
+    \item \textbf{Notice:} Stores official university notices including title, content, posting date, and expiry date.
+    \item \textbf{AdmitCard:} Stores admit card information such as exam name, exam date, exam location, and validity status.
+\end{itemize}
+
+Each entity is uniquely identified using a primary key. Relationships between entities are maintained using foreign keys to ensure referential integrity.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/database.jpeg}
+\caption{Logical Database Schema}
+\end{figure}
+
+Figure below illustrates the Entity Relationship (ER) diagram representing the core entities of the system and their relationships.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/er_diagram.jpeg}
+\caption{Entity Relationship (ER) Diagram}
+\end{figure}
+
 \end{document}
